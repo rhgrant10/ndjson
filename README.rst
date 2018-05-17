@@ -10,12 +10,7 @@ Support for ndjson. Plain and simple.
 .. image:: https://img.shields.io/travis/rhgrant10/ndjson.svg
         :target: https://travis-ci.org/rhgrant10/ndjson
 
-.. image:: https://readthedocs.org/projects/ndjson/badge/?version=latest
-        :target: https://ndjson.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
-
 * Free software: GNU General Public License v3
-* Documentation: https://ndjson.readthedocs.io.
 
 
 Features
