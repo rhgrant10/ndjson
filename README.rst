@@ -10,7 +10,11 @@ Support for ndjson. Plain and simple.
 .. image:: https://img.shields.io/travis/rhgrant10/ndjson.svg
         :target: https://travis-ci.org/rhgrant10/ndjson
 
-* Free software: GNU General Public License v3
+.. image:: https://img.shields.io/pypi/pyversions/ndjson   
+    :target: https://pypi.python.org/pypi/ndjson
+
+.. image:: https://img.shields.io/pypi/l/ndjson
+    :target: https://pypi.python.org/pypi/ndjson
 
 
 Features
