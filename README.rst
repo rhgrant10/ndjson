@@ -30,7 +30,7 @@ Features
 Usage
 -----
 
-``ndjson`` exposes the same api as the builtin ``json`` and ``pickle`` packgages.
+``ndjson`` exposes the same api as the builtin ``json`` and ``pickle`` packages.
 
 .. code-block:: python
 
