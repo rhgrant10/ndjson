@@ -10,7 +10,7 @@ Support for ndjson. Plain and simple.
 .. image:: https://img.shields.io/travis/rhgrant10/ndjson.svg
         :target: https://travis-ci.org/rhgrant10/ndjson
 
-.. image:: https://img.shields.io/pypi/pyversions/ndjson   
+.. image:: https://img.shields.io/pypi/pyversions/ndjson
     :target: https://pypi.python.org/pypi/ndjson
 
 .. image:: https://img.shields.io/pypi/l/ndjson
@@ -59,6 +59,26 @@ use with other libraries, such as ``requests``:
 
     response = requests.get('https://example.com/api/data')
     items = response.json(cls=ndjson.Decoder)
+
+The library also packs ``reader`` and ``writer`` classes very similar to standard csv ones:
+
+.. code-block:: python
+
+    import ndjson
+
+    # Streaming lines from ndjson file:
+    with open('./posts.ndjson') as f:
+        reader = ndjson.reader(f)
+
+        for post in reader:
+            print(post)
+
+    # Writing items to a ndjson file
+    with open('./posts.ndjson', 'w') as f:
+        writer = ndjson.writer(f, ensure_ascii=False)
+
+        for post in posts:
+            writer.writerow(post)
 
 
 Credits

@@ -24,3 +24,34 @@ def dump(obj, fp, cls=None, **kwargs):
 def dumps(*args, **kwargs):
     kwargs.setdefault('cls', Encoder)
     return json.dumps(*args, **kwargs)
+
+
+class writer(object):
+    def __init__(self, f, **kwargs):
+        self.f = f
+        self.kwargs = kwargs
+
+    def writerow(self, row):
+        stringified = json.dumps(row, **self.kwargs)
+        self.f.write(stringified + '\n')
+
+
+class reader(object):
+    def __init__(self, f, **kwargs):
+        self.f = f
+        self.kwargs = kwargs
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        line = ''
+
+        while line == '':
+            line = next(self.f).strip()
+
+        return json.loads(line, **self.kwargs)
+
+    # NOTE: this is necessary to comply with py27
+    def next(self):
+        return self.__next__()
