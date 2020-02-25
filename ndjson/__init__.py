@@ -2,7 +2,7 @@
 
 __author__ = """Robert Grant"""
 __email__ = 'rhgrant10@gmail.com'
-__version__ = '0.3.0'
+__version__ = '0.3.1'
 
 
 from .codecs import Decoder, Encoder  # noqa: F401
