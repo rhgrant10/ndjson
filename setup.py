@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from setuptools import setup, find_packages
+
+try:
+    from setuptools import setup, Extension
+except ImportError:
+    from distutils.core import setup, Extension
 
 
 with open('README.rst') as readme_file:
