@@ -2,7 +2,7 @@
 ndjson
 ======
 
-Support for ndjson. Plain and simple.
+Support for [ndjson](https://github.com/ndjson/ndjson-spec). Plain and simple.
 
 .. image:: https://img.shields.io/pypi/v/ndjson.svg
         :target: https://pypi.python.org/pypi/ndjson
