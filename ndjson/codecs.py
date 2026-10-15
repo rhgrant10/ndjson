@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 import json
+import re
 
 
 class Decoder(json.JSONDecoder):
     def decode(self, s, *args, **kwargs):
-        lines = ','.join(s.splitlines())
-        text = '[{}]'.format(lines)
+        # splitlines() also splits characters allowed inside JSON strings.
+        lines = re.split(r'\r\n|\r|\n', s)
+        if lines[-1] == '':
+            lines.pop()
+        text = '[{}]'.format(','.join(lines))
         return super(Decoder, self).decode(text, *args, **kwargs)
 
 
